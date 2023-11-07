@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="../assets/css/style.css" rel="stylesheet">
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/0743fc8aa3.js" crossorigin="anonymous"></script>
+
+<style>
+body{
+    background:#f3f3f3;
+    margin-top:20px;
+    color: #616f80;
+}
+.card {
+    border: none;
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+    box-shadow: 0 0 13px 0 rgba(236,236,241,.44);
+}
+
+.avatar-xs {
+    height: 2.3rem;
+    width: 2.3rem;
+}
+</style>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-archive text-primary h4 ml-3"></i>
+                    </div>
+                    <h5 class="font-size-20 mt-0 pt-1">24</h5>
+                    <p class="text-muted mb-0">Total</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-th text-primary h4 ml-3"></i>
+                    </div>
+                    <h5 class="font-size-20 mt-0 pt-1">18</h5>
+                    <p class="text-muted mb-0">Completed</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body">
+                    <div class="float-right">
+                        <i class="fa fa-file text-primary h4 ml-3"></i>
+                    </div>
+                    <h5 class="font-size-20 mt-0 pt-1">06</h5>
+                    <p class="text-muted mb-0">Pending Projects</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group mb-0">
+                            <label>Search</label>
+                            <div class="input-group mb-0">
+                                <input type="text" class="form-control" placeholder="Search..." aria-describedby="project-search-addon" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-danger" type="button" id="project-search-addon"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive project-list">
+                        <table class="table project-table table-centered table-nowrap">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">제목</th>
+                                    <th scope="col">작성일</th>
+                                    <th scope="col">처리</th>
+									<th scope="col">조회수</th>
+<!--                                    <th scope="col">Progress</th>-->
+<!--                                    <th scope="col">Action</th>-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>New admin Design</td>
+                                    <td>02/5/2019</td>
+                                    <td>
+                                        <span class="text-success font-12"><i class="mdi mdi-checkbox-blank-circle mr-1"></i> Completed</span>
+                                    </td>
+                                    <td>100</td>
+                                    
+
+                                    <td>
+                                        <div class="action">
+                                            <a href="#" class="text-success mr-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"> <i class="fa fa-pencil h5 m-0"></i></a>
+                                            <a href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Close"> <i class="fa fa-remove h5 m-0"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Landing page Design</td>
+                                    <td>04/6/2019</td>
+                                    <td>
+                                        <span class="text-primary font-12"><i class="mdi mdi-checkbox-blank-circle mr-1"></i> Pending</span>
+                                    </td>
+                                    <td>123</td>
+                                    
+
+                                    <td>
+                                        <div class="action">
+                                            <a href="#" class="text-success mr-4" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"> <i class="fa fa-pencil h5 m-0"></i></a>
+                                            <a href="#" class="text-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Close"> <i class="fa fa fa-remove h5 m-0"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end project-list -->
+
+                    <div class="pt-3">
+                        <ul class="pagination justify-content-end mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+</div>
+</body>
+</html>

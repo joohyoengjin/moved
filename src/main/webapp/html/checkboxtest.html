@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="checkbox" id="<%=productName%>">
+<label for="<%=productName%>" class="cb1"></label>
+
+<style>
+	.container {
+  text-align: center; 
+}
+.cb1{
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.cb1::before, .cb1::after {
+  position: absolute;
+  height: 0;
+  width: 4px;
+  background-color: #34b93d;
+  box-sizing: border-box;
+  display: inline-block;
+  transform-origin: left top;
+  border-radius: 5px;
+  content: ' ';
+  transition: opacity ease 0.5;
+}
+
+.cb1::before {
+  top: 14.4px;
+  left: 8.2px;
+  box-shadow: 0 0 0 1px transparent;
+  transform: rotate(-135deg);
+}
+.cb1::after {
+  top: 7.4px;
+  left: 1px;
+  transform: rotate(-45deg);
+}
+input[id="<%=productName%>"]:checked + .cb1 {
+  border-color: #34b93d;
+}
+
+input[id="<%=productName%>"]:checked + .cb1::after {
+  height: 10px;
+  animation: bottomcheck 0.2s ease 0s forwards;
+}
+input[id="<%=productName%>"]:checked + .cb1::before{
+  height: 24px;
+  animation: topcheck 0.4s ease 0s forwards;
+}
+input {
+	display: none;
+}
+@keyframes bottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 10px;
+  }
+}
+@keyframes topcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 24px;
+  }
+}
+</style>
+
+</body>
+</html>
